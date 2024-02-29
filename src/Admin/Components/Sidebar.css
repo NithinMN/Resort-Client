@@ -1,0 +1,25 @@
+.sidebar{
+  position: fixed;
+  background-color: #C09A76;
+  color: aliceblue;
+  width: 20vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar .logo{
+  height: 10vh;
+  color: aliceblue;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+ 
+}
+.sidebar li{
+  font-size: 24px;
+  padding: 10px 40px;
+  display: flex;
+  align-items: center;
+  list-style: none;
+
+}
