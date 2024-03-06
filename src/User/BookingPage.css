@@ -1,24 +1,49 @@
-body {
-    font-family: Arial, sans-serif;
-}
-
-
-label,
-input,
-textarea,
-select
- {
-    display: block;
-    margin-bottom: 10px;
-}
-
-input,
-textarea,
-select {
-    width: 100%;
-    padding: 8px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-
+/* Define styles for small screens */
+@media (max-width: 576px) {
+    .form {
+      display: flex;
+      flex-direction: row;
+    }
+    .form input,
+    .form select,
+    .form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+  
+ 
+  @media (min-width: 577px) and (max-width: 992px) {
+    .form {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 10px;
+    }
+  }
+  
+ 
+  @media (min-width: 993px) {
+    .form {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-gap: 10px;
+    }
+  }
+  
+  
+  .main-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .main-btn:hover {
+    background-color:burlywood;
+   border: none;
+    color: #fff;
+  }
+  

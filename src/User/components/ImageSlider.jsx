@@ -1,7 +1,6 @@
 import React from 'react';
 import { Slide } from 'react-slideshow-image';
 import 'react-slideshow-image/dist/styles.css';
-import './ImageSlider.css'; 
 import image1 from '../../Assets/slide1.jpeg';
 import image2 from '../../Assets/pic2.jpg';
 import image3 from '../../Assets/pexels-fabian-wiktor-994605.jpg';
@@ -11,7 +10,7 @@ import { TypeAnimation } from 'react-type-animation';
 const divStyle = {
   position: 'relative', 
   display: 'flex',
-  alignItems: 'center',
+  alignItems:'center',
   justifyContent: 'center',
   backgroundSize: 'cover',
   height: '100vh'
@@ -19,65 +18,68 @@ const divStyle = {
 
 const slideImages = [
   {
+    url: image1,
+    caption:  <TypeAnimation
+    sequence={[
+      
+      'Welcome ',
+      1000,
+      
+      
+      ]}
+    wrapper="span"
+    speed={50}
+    style={{ fontSize: '3rem', display: '', fontStyle:'italic' }}
+    repeat={Infinity}
+  />
+  },
+
+  {
     url: image2,
     caption:  <TypeAnimation
     sequence={[
       
-      'We produce food for Mice',
-      1000, 
-      'We produce food for Hamsters',
-      1000,
-      'We produce food for Guinea Pigs',
-      1000,
-      'We produce food for Chinchillas',
-      1000
+      // 'We produce food for Mice',
+      // 2000, 
+      // 'We produce food for Hamsters',
+      // 1000,
+      // 'We produce food for Guinea Pigs',
+      // 1000,
+      // 'We produce food for Chinchillas',
+      // 1000
+      'Exciting times ahead: exclusive offers, insider tips, and much more, are all coming your way',
+      2000,
     ]}
     wrapper="span"
     speed={50}
-    style={{ fontSize: '2em', display: 'inline-block' }}
+    style={{ fontSize: '3em', display: 'inline-block'  }}
     repeat={Infinity}
   />
   },
+
   {
     url: image3,
     caption:  <TypeAnimation
     sequence={[
       
-      'We produce food for Mice',
-      1000,
-      'We produce food for Hamsters',
-      1000,
-      'We produce food for Guinea Pigs',
-      1000,
-      'We produce food for Chinchillas',
-      1000
+      // 'We produce food for Mice',
+      // 1000,
+      // 'We produce food for Hamsters',
+      // 1000,
+      // 'We produce food for Guinea Pigs',
+      // 1000,
+      // 'We produce food for Chinchillas',
+      // 1000
+      ' Stay tuned! ',
+      3000,
     ]}
     wrapper="span"
     speed={50}
-    style={{ fontSize: '12', display: 'inline-block', fontStyle:'italic' }}
+    style={{ fontSize: '3rem', display: 'inline-block', fontStyle:'italic' }}
     repeat={Infinity}
   />
   },
-  {
-    url: image1,
-    caption:  <TypeAnimation
-    sequence={[
-      
-      'We produce food for Mice',
-      1000,
-      'We produce food for Hamsters',
-      1000,
-      'We produce food for Guinea Pigs',
-      1000,
-      'We produce food for Chinchillas',
-      1000
-    ]}
-    wrapper="span"
-    speed={50}
-    style={{ fontSize: '12', display: 'inline-block', fontStyle:'italic' }}
-    repeat={Infinity}
-  />
-  },
+ 
   
 ];
 

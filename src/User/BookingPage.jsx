@@ -1,38 +1,85 @@
-import React from 'react'
-import './BookingPage.css'
+import React, { useEffect, useState } from 'react'
+import './BookingPage.css';
+import axios from 'axios';
+import { ToastContainer } from 'react-toastify';
+import { useNavigate } from 'react-router-dom';
 
-const BookingPage = () => {
+
+
+
+const BookingPage =()=> {
+  const[Bookingdata,setBookingdata]=useState('')
+  const navigate=useNavigate()
+  
+
+  const token=localStorage.getItem('token')
+  // const userId=localStorage.getItem('userId')
+
+  let handleChange = (e) => {
+    setBookingdata({...Bookingdata, [e.target.name]: e.target.value});
+  }
+  
+
+ let handleSubmit= async(e)=>{
+    e.preventDefault()
+    
+
+  try{
+    let response=await axios.post('http://localhost:4000/insertBooking',Bookingdata);
+    if(response.data){
+    console.log(response,'response');
+    alert('Booking Successfully')
+
+
+  }
+}
+catch(err){
+  console.log(err);
+  alert(err.response.data)
+  
+ }   
+  }
+
+  useEffect(() => {
+    try {
+      if (!token) {
+        navigate ('/Login')
+      }
+    } catch (err) {
+      console.log(err);
+    }
+  })
+  
+   
   return (
-    <div className='r'>
+    <div>
         <div>
-            <h1 className='text-center mt-3 '>Room Booking</h1>
+           <h1 className='text-center mt-3 '>Room Booking</h1>
 
-        <form action="" className='mt-3 '>
+    <form   onSubmit={handleSubmit} className='mt-3 form d-flex '>
 
-      <div className='form'>
-        <input type="text" id="name" name="name" placeholder='Name' />
-        <input type="email" id="email" name="email" placeholder='Email'/>
-        <input type="tel" id="phone" name="phone" placeholder='Phonenumber'/>
-        <input type="date" id="checkin" name="checkin" placeholder='Check-in-date'/>
-        <input type="date" id="checkout" name="checkout" placeholder='Checko-ut-date'/>
-        <input type="number" id="guests" name="guests" min="1" placeholder='Number of Guest'/>
+      
+        <input type="text" className='input-field' onChange={handleChange}  name="Name" placeholder='Name' />
+        <input type="email" className='input-field' onChange={handleChange} name="Email" placeholder='Email'/>
+        <input type="tel" className='input-field' onChange={handleChange}  name="Phone" placeholder='Phonenumber'/>
+        <input type="date" className='input-field' onChange={handleChange} name="checkin" value='Check-in-date'/>
+        <input type="date" className='input-field' onChange={handleChange}  name="checkout" placeholder='Check-Out-date'/>
+        <input type="number" className='input-field' onChange={handleChange}  name="guests" min="1" placeholder='Number of Guest'/>
      
-        <select id="room-type" name="room-type" aria-placeholder='Room type'>
+        <select id="room-type" className='input-field' onChange={handleChange} name="room-type" aria-placeholder='Room type'>
             <option value="single">Single</option>
             <option value="double">Double</option>
             <option value="suite">Suite</option>
         </select>
-        <input type="text" placeholder='Special-request' />
-        </div>
+        <input type="text" className='input-field' onChange={handleChange} name='request' placeholder='Special-request' />
+       
       
-        <a href="/" className="btn  main-btn btn-outline-success mt-3">Book Now</a>
+        <button type='submit' className='btn main-btn mt-3'>Book Now</button>
+            
+        <ToastContainer/>
     </form>
-
-        
-
-      
     </div>
-    </div>
+   </div>
   )
 }
 

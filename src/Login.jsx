@@ -1,21 +1,66 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { FaFacebook, FaGithub, FaGoogle, FaLinkedin} from 'react-icons/fa'
 import './Login.css';
 import img1 from '../src/Assets/undraw_sign_in_re_o58h (1).svg'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const Login = () => {
+
+    const[data,setdata]=useState('')
+    const navigate=useNavigate()
+
+    let handleChange=(e)=>{
+        setdata({...data,[e.target.name]:e.target.value})
+
+    }
+    
+    let handleSubmit=async(e)=>{
+        e.preventDefault()
+        console.log(data);
+
+        try{
+           
+            let response=await axios.post('http://localhost:4000/login',data)
+            console.log(response ,'response');
+            
+          if(response.data){
+            localStorage.setItem('userId',response.data.id)
+            localStorage.setItem('token',response.data.token)
+
+          
+          alert('Welcome')
+          navigate('/BookingPage')
+          
+        
+          
+      
+          }
+          
+         
+         }
+         catch(err){
+          console.log(err);
+          alert(err.response.data)
+          
+         }
+    }
+
+
+    
+   
   return (
     <div className='formdiv mt-3'>
             <div className='signin'>
-                <form action="" className='sign-in-form'>
+                <form action="" onSubmit={handleSubmit} className='sign-in-form'>
                     <h2 className='title '>Sign in</h2>
                     
 
                     <div className='input-field'>
-                    <input type="Email"  placeholder='Email' name='email' />
+                    <input type="Email" onChange={handleChange}  placeholder='Email' name='Email' />
                     </div>
 
                     <div className='input-field'>
-                    <input type="Password"  placeholder='Password' name='Password' id='Password'/>
+                    <input type="Password"  onChange={handleChange}  placeholder='Password' name='Password' id='Password'/>
                     </div>
 
                     <input type='Submit' placeholder='Login' className='main-btn' id='main-button'/>
@@ -26,8 +71,7 @@ const Login = () => {
                         <a href="" className="social-icons"><FaLinkedin/></a>
                         <a href="" className="social-icons"><FaGithub/></a>
                     </div>
-
-
+                  <p>Don't have an account? <a href="/Signup" className='text-decoration-none mt-1 '><span className='signup-p'>Signup.</span></a></p>
                 </form>
 
 

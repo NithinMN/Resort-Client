@@ -3,33 +3,46 @@ import signupimg from '../src/Assets/undraw_welcome_re_h3d9.svg';
 import { FaFacebook, FaGithub, FaGoogle, FaLinkedin } from 'react-icons/fa';
 import './Login.css';
 import axios from 'axios';
-import 'react-toastify/dist/ReactToastify.css';
-import { Toast } from 'bootstrap';
+import { Alert, Toast } from 'bootstrap';
+import { useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
 
 
 const Signup = () => {
 
-
-  const[data,setdata]=useState()
+  const[data,setdata]=useState('')
+  const navigate=useNavigate()
 
   let handleChange=(e)=>{
     setdata({...data,[e.target.name]:e.target.value})
 
   }
-  console.log(data);
-
+  
   let handleSubmit= async(e)=>{
-   e.preventDefault()
-   
+    e.preventDefault()
+    
+    console.log('data',data);
+    try{
+      if(data.Password !== data.confirmpassword){
+        return alert('Password not matching')
+      }
+      let response=await axios.post('http://localhost:4000/insert',data)
+    if(response.data){
+     console.log(response ,'response');
+    alert('register succesfully')
+    // e.target.reset()
+    navigate('/login')
+    
+    
 
-   try{
-    let response=await axios.post('http://localhost:4000/insert',data)
-    console.log(response ,'response');
+    }
+    
    
    }
    catch(err){
     console.log(err);
-   
+    alert(err.response.data)
+    
    }
 
 
@@ -48,7 +61,7 @@ const Signup = () => {
           totam consequuntur nihil, quis eum hic possimus alias dignissimos
           aliquam libero eaque!
         </p>
-        <a href="/Login" className="btn  main-btn btn-outline-success">sign in</a>
+        <a href="/Login" className="btn main-btn">sign in</a>
         
         
         
@@ -81,7 +94,7 @@ const Signup = () => {
               type='password'
               onChange={handleChange}
               placeholder='Confirm password'
-              name='Password'
+              name='confirmpassword'
             />
           </div>
 
@@ -103,6 +116,7 @@ const Signup = () => {
               <FaGithub />
             </a>
           </div>
+          <ToastContainer/>
         </form>
       </div>
     </div>

@@ -10,8 +10,8 @@ import 'react-slideshow-image/dist/styles.css'
 import About from './User/About';
 import Contact from './User/Contact';
 import Footer from './User/components/Footer';
-import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
 
 import Signup from './Signup';
 import Services from './User/pages/Services';
@@ -21,6 +21,8 @@ import Restaurent from './User/pages/Restaurent';
 import SideBar from './Admin/Components/SideBar';
 import BookingPage from './User/BookingPage';
 import Login from './Login';
+import BookingViewpage from './Admin/Pages/BookingViewpage';
+import Home from './Admin/Pages/Home';
 
 
 
@@ -46,19 +48,24 @@ root.render(
         <Route path='BookingPage' element={<BookingPage/>}/>    
       </Route>
 
-      <Route path='/admin' element={<SideBar />}> 
-            
-      </Route>
 
-      </Routes>
-    </BrowserRouter>
-  </React.StrictMode>
+      
+        <Route path='/admin' element={<SideBar />}> 
+        <Route index element={<BookingViewpage />} />
+        <Route path='Login' element={<Login/>}/>
+        {/* <Route path='/admin/BookingViewpage' element={<BookingViewpage />} /> */}
+
+     
+
+       </Route>
+    </Routes>
+  </BrowserRouter>
+ </React.StrictMode>
+
+
+
 
  
-  
-
-  
-  
 );
 
 reportWebVitals();

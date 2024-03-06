@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
 import { FaHotel } from 'react-icons/fa';
-import { Link } from 'react-router-dom'; 
+import { Link, useNavigate } from 'react-router-dom'; 
 import './Navbar.css';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const navigate = useNavigate()
+
+  // const token = localStorage.getItem('token')
+  // const userId = localStorage.getItem('userId')
 
   const handleMouseEnter = () => {
     setIsDropdownOpen(true);
@@ -20,6 +24,12 @@ const Navbar = () => {
   const toggleDropdown = () => {
     setIsDropdownOpen(!isDropdownOpen);
   };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token')
+    localStorage.removeItem('userId')
+    navigate('\login')
+  }
 
   return (
     <div>
@@ -95,10 +105,11 @@ const Navbar = () => {
           <Link className="btn  main-btn btn-outline-success" to="/Signup">
             Book Now
           </Link>
+          <button onClick={handleLogout}>logout</button>
         </div>
       </nav>
       <Outlet />
-      {/* <div className="m-1"><Footer /></div> */}
+      {/* <div className="mt-"><Footer /></div> */}
     </div>
   );
 };

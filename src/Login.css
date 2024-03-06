@@ -57,7 +57,7 @@ form{
     border-radius: 55px;
     display: grid;
     grid-template-columns: 100% 85%;
-    padding: 0.4rem
+    padding: 15px;
 }
 .input-field i{
     text-align: center;
@@ -138,4 +138,7 @@ form{
 
     position: relative;
     width: fit-content;
+}
+.signup-p{
+    color: blue;
 }

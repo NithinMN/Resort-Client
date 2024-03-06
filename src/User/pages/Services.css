@@ -13,20 +13,23 @@
 }
 .services-style1{
     background-color: #F3F3F3;
+}
+  
+.services-title{
+    
+    
    
 }
-.services-title{
-    margin-bottom: 30px;
-    text-align: center;
-}
+
 .card{
-    padding: 43px 15px;
+    padding: 5px 15px;
     text-align: center;
     border: none;
 }
 .card-title{
     text-align: center;
 }
+
 .card{
     border-radius: 10px;
 }
