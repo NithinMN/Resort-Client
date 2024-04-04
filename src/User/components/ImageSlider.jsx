@@ -25,11 +25,17 @@ const slideImages = [
       'Welcome ',
       1000,
       
+      ' to our resort',
+      1000,
+      
+      ' Welcome To Our Resort ',
+      1000,
+      
       
       ]}
     wrapper="span"
     speed={50}
-    style={{ fontSize: '3rem', display: '', fontStyle:'italic' }}
+    style={{ fontSize: '3rem', display: '', fontStyle:'oblique', color:'aliceblue' }}
     repeat={Infinity}
   />
   },
@@ -52,7 +58,7 @@ const slideImages = [
     ]}
     wrapper="span"
     speed={50}
-    style={{ fontSize: '3em', display: 'inline-block'  }}
+    style={{ fontSize: '2em', display: 'inline-block',fontStyle:'oblique',color:'aliceblue',padding:'20px'  }}
     repeat={Infinity}
   />
   },
@@ -62,20 +68,20 @@ const slideImages = [
     caption:  <TypeAnimation
     sequence={[
       
-      // 'We produce food for Mice',
-      // 1000,
-      // 'We produce food for Hamsters',
+        'Stay tuned!',
+         1000,
+         '',
       // 1000,
       // 'We produce food for Guinea Pigs',
       // 1000,
       // 'We produce food for Chinchillas',
       // 1000
-      ' Stay tuned! ',
-      3000,
+      
+      
     ]}
     wrapper="span"
     speed={50}
-    style={{ fontSize: '3rem', display: 'inline-block', fontStyle:'italic' }}
+    style={{ fontSize: '3rem', display: 'inline-block', fontStyle:'oblique',color:'aliceblue',padding:'20px' }}
     repeat={Infinity}
   />
   },

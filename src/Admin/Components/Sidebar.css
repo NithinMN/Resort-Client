@@ -1,43 +1,36 @@
 body {
   margin: 0;
   padding: 0;
+  background: #eee;
 }
-
-.sidebar {
-  height: 100%;
-  width: 250px;
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: #111;
-  padding-top: 50px;
-  transition: 0.5s;
+ #side-nav{
+  background: #000;
+  min-width: 230px;
+  max-width: 250px;
+  height: 100vh;
 }
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
+.content{
+  min-height: 100vh;
+  width: 100%;
 }
+hr.h-color{
+  background: #eee;
 
-.sidebar li {
-  padding: 15px 40px;
 }
-
-.sidebar li a {
-  color: white;
-  text-decoration: none;
+.sidebar li.active{
+  background: #eee;
+  border-radius: 8px;
+  padding: 10px;
 }
-
-
-
-@media screen and (max-width: 768px) {
-  .sidebar {
-    width: 0;
-  }
-  .content {
-    margin-left: 0;
-  }
+.sidebar li.active a,.sidebar li.active a:hover{
+  color: #000;
 }
+.sidebar li a{
+  color: #fff;
+
+} 
+
+
 
 .toggle-btn {
   position: absolute;

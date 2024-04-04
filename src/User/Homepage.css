@@ -1,88 +1,117 @@
+/* Homepage CSS */
 .container-home {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh; 
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: auto; 
+  padding: 50px 20px; 
+}
+
 .heading-container {
-    text-align: center; 
-  }
-
-   
-.second-p{
-    color: #787878;
-    font-size: 15px;
-    line-height: 26px;
-    padding: 10px;
+  text-align: center;
 }
-.home-btn{
-    display: inline-block;
-    width: 150px;
-    height: 49px;
-    border: none;
-    outline: none;
-   
-    cursor: pointer;
-    background-color: #C09A76;
+.home-line{
+  display: inline-block;
+  vertical-align: middle;
+  width: 50px;
+  height: 5px;
+  background: #C19B76;
+}
+
+.home-second-p {
+  color: #787878;
+  font-size: 15px;
+  line-height: 26px;
+  padding: 10px;
+}
+
+.home-btn {
+  display: inline-block;
+  width: 150px;
+  height: 49px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background-color: #c09a76;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: 0.5s;
+}
+
+.home-btn:hover {
+  background-color:burlywood;
+   border: none;
     color: #fff;
-    text-transform: uppercase;
-    font-weight: 600;
-    transition: 0.5s;
-}
-.home-btn:hover{
-    background-color: black;
-}
-.span-p{
-    color: #C09A76 ;
-    font-style: normal;
-    font-weight: 400;
 }
 
-/* rooomstyle */
+.span-p {
+  color: #c09a76;
+  font-style: normal;
+  font-weight: 400;
+}
 
-.room-style{
-    background-color: #F3F3F3;
-    padding: 100px 0;
+/* Roomstyle CSS */
+.room-style {
+  background-color: #f3f3f3;
+  padding: 50px 20px; /* Adjust padding for smaller screens */
 }
-.room-title{
-    margin: 0;
-    color: #232323;
-    font-size: 32px;
-    font-weight: 600;
-    font-family: 'poppins';
+
+.room-title {
+  margin: 0;
+  color: #232323;
+  font-size: 32px;
+  font-weight: 600;
+  font-family: 'poppins';
 }
+
 .image-boxes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; /* Adjust alignment for smaller screens */
+  margin-top: 30px; /* Add margin for better spacing */
+}
+
+.image-box {
+  margin: 10px;
+  text-align: center;
+  flex: 0 0 calc(33.33% - 20px); /* Adjust box size for smaller screens */
+  max-width: calc(33.33% - 20px); /* Adjust box size for smaller screens */
+}
+
+.image-box img {
+  width: 100%; /* Make image responsive */
+  max-width: 100%;
+  height: auto;
+}
+
+.image-box h2,
+.image-box p {
+  margin: 20px 0;
+}
+
+
+
+/* Media Queries for responsiveness */
+@media screen and (max-width: 768px) {
+  .container-home {
+    padding: 30px 10px; /* Adjust padding for smaller screens */
   }
   
   .image-box {
-    margin: 10px;
-    text-align: center;
+    flex: 0 0 calc(50% - 20px); /* Adjust box size for smaller screens */
+    max-width: calc(50% - 20px); /* Adjust box size for smaller screens */
   }
-  
-  .image-box img {
-    width: 350px;
-    height: 300px;
-    
 }
+
+@media screen and (max-width: 576px) {
+  .container-home {
+    padding: 20px 10px; /* Adjust padding for smaller screens */
+  }
   
-  .image-box h2, .image-box p {
-    margin: 20px 0;
+  .image-box {
+    flex: 0 0 calc(100% - 20px); /* Adjust box size for smaller screens */
+    max-width: calc(100% - 20px); /* Adjust box size for smaller screens */
   }
-  hr {
-   
-    color: #C09A76 ;
-    
-   
-   
-   
-   
-    
-  }
-
-
-
-
+}

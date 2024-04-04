@@ -11,6 +11,8 @@ import About from './User/About';
 import Contact from './User/Contact';
 import Footer from './User/components/Footer';
 import 'react-toastify/dist/ReactToastify.css';
+import '@fortawesome/fontawesome-free/css/all.css';
+
 
 
 import Signup from './Signup';
@@ -22,7 +24,16 @@ import SideBar from './Admin/Components/SideBar';
 import BookingPage from './User/BookingPage';
 import Login from './Login';
 import BookingViewpage from './Admin/Pages/BookingViewpage';
-import Home from './Admin/Pages/Home';
+import ContactMessages from './Admin/Pages/ContactMessages';
+import CreateRoom from './Admin/Pages/CreateRoom';
+import CreateRoomtype from './Admin/Pages/CreateRoomtype';
+import RestaurentBookView from './Admin/Pages/RestaurentBookView';
+import RegistersView from './Admin/Pages/RegistersView';
+import PaymentPage from './User/PaymentPage';
+import ReceiptPage from './User/ReceiptPage';
+import PaymentSuccessPage from './User/PaymentSuccessPage';
+
+
 
 
 
@@ -46,14 +57,26 @@ root.render(
         <Route path='Activities' element={<Activities/>}/>    
         <Route path='Restaurent' element={<Restaurent/>}/>    
         <Route path='BookingPage' element={<BookingPage/>}/>    
+        <Route path='PaymentPage' element={<PaymentPage/>}/> 
+        <Route path='paymentsuccess' element={<PaymentSuccessPage/>}/> 
+
+           
+        
+         
+       
       </Route>
 
 
       
-        <Route path='/admin' element={<SideBar />}> 
+        <Route path='/admin' element={<SideBar/>}> 
         <Route index element={<BookingViewpage />} />
-        <Route path='Login' element={<Login/>}/>
-        {/* <Route path='/admin/BookingViewpage' element={<BookingViewpage />} /> */}
+        <Route path='/admin/ContactMessages' element={<ContactMessages/>}/> 
+        <Route path='/admin/RegistersView' element={<RegistersView/>}/> 
+        <Route path='/admin/BookingViewpage' element={<BookingViewpage/>}/> 
+        <Route path='/admin/RestaurentBookView' element={<RestaurentBookView/>}/> 
+        <Route path='/admin/CreateRoom' element={<CreateRoom/>}/> 
+        <Route path='/admin/CreateRoomtype' element={<CreateRoomtype/>}/> 
+
 
      
 

@@ -1,4 +1,4 @@
-.top-image{
+.Room-top-image{
     background-image: url('../Assets/allpage.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -9,6 +9,25 @@
   .room-card{
   width: 300px;
   height: 50px;
+  display: flex;
+  flex-wrap: wrap;
 
    
   }
+  .Room-line{
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 5px;
+    background: #C19B76;
+
+}
+.Room-second-p {
+  color: #787878;
+  font-size: 15px;
+  line-height: 35px;
+  padding: 10px;
+  margin-top: 50px;
+  width: 100%;
+  
+}

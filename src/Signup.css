@@ -1,28 +1,37 @@
 
+.Signup-social-text{
+  padding: .7rem;
+  font-size: 1rem;
+
+}
+.Signup-social-media{
+  display: flex;
+  justify-content: center;
+}
+
+.Signup-social-icons{
+  height: 46px;
+  width: 46px;
+  border: 1px solid;
+  margin: 0 0.45rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  text-decoration: none;
+  color:rgb(14, 11, 11);
+  border-radius: 10px;
+  transition: 03s;
   
-  
-  .content {
-    text-align: center;
-  }
-  
-  .signup {
-    margin-top: 20px;
-    max-width: 400px;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .container {
-      padding: 10px;
-    }
-  
-    .signup {
-      max-width: 100%;
-    }
-  }
-  
-  @media screen and (max-width: 480px) {
-    .content {
-      padding: 0 20px;
-    }
-  }
-  
+ 
+}
+.Signup-social-icons:hover{
+  background: #C09A76;
+}
+    
+ .box-area{
+  width: 930px;
+}
+.right-box{
+  padding: 40px 30px 40px;
+}

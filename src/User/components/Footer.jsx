@@ -9,7 +9,7 @@ const Footer = () => {
   return (
     <footer>
       
-        <div className='m-5 '>
+        <div className='p-5 mb-5'>
 
 
               
@@ -26,11 +26,10 @@ const Footer = () => {
            <li><a href="/">Home</a></li>
            <li><a href="/About">About</a></li>
            <li><a href="/Services">Services</a></li>
-           <li><a href="/Restaurent">Restaurent</a></li>
            <li><a href="/Contact">Contact Us</a></li>
           
         </ul>
-        <p className='d-flex justify-content-center text-white  '>@2024 Online Turtorials  |  All Rights Reserved</p>
+        <p className='d-flex justify-content-center text-white text-center   '>@2024 Resort |  All Rights Reserved</p>
      
 
          

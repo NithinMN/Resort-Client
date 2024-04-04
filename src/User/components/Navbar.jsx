@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaHotel } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom'; 
+import { Link, useLocation, useNavigate } from 'react-router-dom'; 
 import './Navbar.css';
 import { Outlet } from 'react-router-dom';
 import Footer from './Footer';
@@ -8,8 +8,9 @@ import Footer from './Footer';
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const navigate = useNavigate()
+  const location=useLocation()
 
-  // const token = localStorage.getItem('token')
+  const token = localStorage.getItem('token')
   // const userId = localStorage.getItem('userId')
 
   const handleMouseEnter = () => {
@@ -30,6 +31,7 @@ const Navbar = () => {
     localStorage.removeItem('userId')
     navigate('\login')
   }
+  const isAdminPage = location.pathname.startsWith('/BookingPage');
 
   return (
     <div>
@@ -101,15 +103,17 @@ const Navbar = () => {
             </ul>
           </div>
         </div>
-        <div className="d-flex justify-content-end p-2  ">
-          <Link className="btn  main-btn btn-outline-success" to="/Signup">
+        <div className="d-flex justify-content-end mt-2 gap-1   ">
+          <Link className="btn  home-btn p-2 " to="/BookingPage">
             Book Now
           </Link>
-          <button onClick={handleLogout}>logout</button>
+          {token && (
+              <Link className=' btn home-btn p-2' onClick={handleLogout}>Logout</Link>
+        )}
         </div>
       </nav>
       <Outlet />
-      {/* <div className="mt-"><Footer /></div> */}
+      <div className="mt-"><Footer /></div>
     </div>
   );
 };

@@ -8,11 +8,13 @@ const BookingViewpage = () => {
 
   const token = localStorage.getItem('token')
   const navigate = useNavigate()
+  const[refresh,setrefresh]=useState(false)
 
   useEffect(()=>{
     if (!token) {
-      return navigate('/admin/login')
+      navigate('/login')
     }
+    
     let fetchdata=async()=> {
       let response=await axios.get(`http://localhost:4000/find/booking`)
       console.log(response);
@@ -20,43 +22,64 @@ const BookingViewpage = () => {
     }
     fetchdata();
 
-  }, []);
+  }, [refresh]);
 
+  let handleDelete= async (id)=>{
+
+    try{
+      console.log('resposne');
+      let response=await axios.delete(`http://localhost:4000/delete/Booking/${id}`)
+      console.log(response);
+      alert('Delete Succesfully')
+      setrefresh(!refresh)
+  
+    }
+    catch (err){
+        console.log(err);
+        alert(err.response.data)
+    }
+  
+  }
   
 
 
   return (
    
-    <div class="booking-container">
-    <h1 class='text-center'>Bookings</h1>
-    <table class="table mt-4 ">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Name</th>
-          <th scope="col">Email</th>
-          <th scope="col">Check-in</th>
-          <th scope="col">Check-out</th>
-          <th scope="col">Guests</th>
-          <th scope="col">Room Type</th>
-          <th scope="col">Special Request</th>
-        </tr>
-      </thead>
-      <tbody>
-              
-        {Bookdata.map((item) => (
-          <tr key={item._id}>
-            <td>{item.Name}</td>
-            <td>{item.Email}</td>
-            <td>{item.checkin}</td>
-            <td>{item.checkout}</td>
-            <td>{item.guests}</td>
-            <td>{item["room-type"]}</td>
-            <td>{item.request}</td>
-          </tr>
-        ))}
-      </tbody>
-    </table>
-  </div>
+    <div class="container-fluid">
+    <h1 class='text-center text-white p-3 bg-dark bg-gradient text-uppercase'>Bookings</h1>
+    <div class='container-fluid mt-3 p-3'>
+        <div class="table-responsive">
+            <table class="table table-bordered table-hover text-center text-capitalize">
+                <thead class="thead-dark">
+                    <tr class='table-dark table-active text-uppercase text-white'>
+                        <th scope="col">Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Check-in</th>
+                        <th scope="col">Check-out</th>
+                        <th scope="col">Guests</th>
+                        <th scope="col">Room Type</th>
+                        <th scope="col">Special Request</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {Bookdata.map((item, index) => (
+                    <tr key={index}>
+                        <td>{item.Name}</td>
+                        <td>{item.Email}</td>
+                        <td>{item.checkin}</td>
+                        <td>{item.checkout}</td>
+                        <td>{item.guests}</td>
+                        <td>{item.request}</td>
+                        <td><button onClick={() => handleDelete(item._id)} class='btn text-white bg-black'>Delete</button></td>
+                    </tr>
+                    ))}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
   
   );
 };

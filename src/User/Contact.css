@@ -10,11 +10,11 @@
   max-width: 600px;
   margin: 0 auto;
   padding: 20px;
-  background-color: #dcd2d2;
+  background-color: #C09A76;
   border-radius: 5px;
 }
 
-.form-label {
+.contact-form-label {
   display: block;
   margin-bottom: 5px;
 }

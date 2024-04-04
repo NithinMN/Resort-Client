@@ -3,6 +3,7 @@ import './BookingPage.css';
 import axios from 'axios';
 import { ToastContainer } from 'react-toastify';
 import { useNavigate } from 'react-router-dom';
+import bookingimg from '../Assets/undraw_booking_re_gw4j (2).svg'
 
 
 
@@ -29,6 +30,8 @@ const BookingPage =()=> {
     if(response.data){
     console.log(response,'response');
     alert('Booking Successfully')
+   navigate('/PaymentPage')
+
 
 
   }
@@ -43,8 +46,9 @@ catch(err){
   useEffect(() => {
     try {
       if (!token) {
-        navigate ('/Login')
+        navigate ('/login')
       }
+      
     } catch (err) {
       console.log(err);
     }
@@ -52,34 +56,58 @@ catch(err){
   
    
   return (
-    <div>
-        <div>
-           <h1 className='text-center mt-3 '>Room Booking</h1>
-
-    <form   onSubmit={handleSubmit} className='mt-3 form d-flex '>
-
-      
-        <input type="text" className='input-field' onChange={handleChange}  name="Name" placeholder='Name' />
-        <input type="email" className='input-field' onChange={handleChange} name="Email" placeholder='Email'/>
-        <input type="tel" className='input-field' onChange={handleChange}  name="Phone" placeholder='Phonenumber'/>
-        <input type="date" className='input-field' onChange={handleChange} name="checkin" value='Check-in-date'/>
-        <input type="date" className='input-field' onChange={handleChange}  name="checkout" placeholder='Check-Out-date'/>
-        <input type="number" className='input-field' onChange={handleChange}  name="guests" min="1" placeholder='Number of Guest'/>
-     
-        <select id="room-type" className='input-field' onChange={handleChange} name="room-type" aria-placeholder='Room type'>
-            <option value="single">Single</option>
-            <option value="double">Double</option>
-            <option value="suite">Suite</option>
-        </select>
-        <input type="text" className='input-field' onChange={handleChange} name='request' placeholder='Special-request' />
+    <div className='container d-flex justify-content-center align-items-center min-vh-100 p-5  '>
+    <div className='row rounded-5 border p-0 bg-white shadow box-area'>
+   
+     <div className='col-md-6 left-box rounded-5  d-flex justify-content-center align-items-center flex-column' style={{backgroundColor:''}}>
+       <div className="featured-image ">
+         <img src={bookingimg} className='img-fluid ' alt="" />
+       </div>
        
-      
-        <button type='submit' className='btn main-btn mt-3'>Book Now</button>
-            
-        <ToastContainer/>
-    </form>
-    </div>
+     </div>
+
+
+ 
+
+   <div className='col-md-6 right-box'>
+     <div className='row align-items-center '>
+       <div className='header-text mb-4 '>
+         <p className='fs-4 '>Hello </p>
+         <p className='fs-4 '>Welcome to Sign Up</p>
+       </div>
+       
+       <form action="" onSubmit={handleSubmit}>
+         <div className='input-group mb-3  '>
+           <input type="text" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 ' placeholder='Name' name='Name' />
+         </div>
+         <div className='input-group mb-3 '>
+           <input type="" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 'placeholder='Email'name="Email" />
+         </div>
+         <div className='input-group mb-3 '>
+           <input type="tel" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 'placeholder='Phone number' name='Phone' />
+         </div>
+         <div className='input-group mb-3 '>
+           <input type="date" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 'placeholder='Checkin date' name="checkin" />
+         </div>
+         <div className='input-group mb-3 '>
+           <input type="date" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 'placeholder='Checkout date' name="checkout" />
+         </div>
+         <div className='input-group mb-3 '>
+           <input type="text" onChange={handleChange} className='form-control form-control-lg bg-light fs-6 'placeholder='Special request' name='request' />
+         </div>
+         <div className='input-group mb-2  '>
+         <button className='btn home-btn w-100 m-lg-4   '>SIGN UP</button>
+         </div>
+         </form>
+     </div>
+     <ToastContainer/>
    </div>
+   
+
+  
+     </div>
+   </div>
+
   )
 }
 

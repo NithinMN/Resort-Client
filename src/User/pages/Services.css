@@ -1,4 +1,4 @@
-.top-image{
+.services-top-image {
     background-image: url('../../Assets/allpage.jpg');
     background-position: center;
     background-repeat: no-repeat;
@@ -6,48 +6,75 @@
     width: 100%;
     height: 50vh;
 }
-.theme-container{
+
+.theme-container {
     max-width: 1170px;
     margin-left: auto;
     margin-right: auto;
+    padding: 0 15px; /* Add padding for smaller screens */
 }
-.services-style1{
+
+.services-second-p {
+    color: #787878;
+    font-size: 15px;
+    line-height: 1.5; /* Adjust line height for better readability */
+    padding: 10px;
+    margin-top: 50px;
+}
+
+.services-line {
+    width: 50px;
+    height: 5px;
+    background: #C19B76;
+    margin: 0 auto; /* Center the line */
+}
+
+.services-style1 {
     background-color: #F3F3F3;
-}
-  
-.services-title{
-    
-    
-   
+    padding: 20px; /* Add padding for better spacing */
 }
 
-.card{
-    padding: 5px 15px;
+.card {
+    padding: 15px; /* Increase padding for better spacing */
     text-align: center;
-    border: none;
-}
-.card-title{
-    text-align: center;
-}
-
-.card{
     border-radius: 10px;
-}
-.card1{
-    background-color: #C09A76;
-    color: white;
-}
-.card2{
-    background-color:black;
-    color: white;
-}
-.services-style1 img{
+    margin-bottom: 20px; /* Add margin between cards */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle box shadow */
     display: flex;
-    align-content: center;
-    width: 98px;
-   ;
-
-
+    flex-wrap: wrap;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
 }
+
+
+
+.card-title {
+    margin-top: 15px; /* Add margin to separate title from image */
+}
+
+.services-style1 img {
+    width: 100px; /* Adjust image size */
+    margin-bottom: 15px; /* Add margin below images */
+}
+
+.responsive-card {
+    display: flex;
+    flex-direction: column;
+  }
   
-    
+  @media (min-width: 768px) {
+    .responsive-card {
+      flex-direction: row;
+      align-items: center;
+    }
+    .responsive-card img {
+      flex: 1;
+      max-width: 50%;
+    }
+    .responsive-card .card-body {
+      flex: 1;
+      max-width: 50%;
+    }
+  }
+  
+

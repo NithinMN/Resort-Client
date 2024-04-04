@@ -4,7 +4,6 @@ import pool from '../../Assets/swimmingpool.jpg'
 import pool1 from '../../Assets/swimming-pool.png'
 import spa from '../../Assets/restaurent.jpg'
 import cycle from '../../Assets/cycleride2.jpg'
-import photography from '../../Assets/photography.png'
 import car from '../../Assets/car.png'
 import wifi from '../../Assets/wi-fi.png'
 import beds from '../../Assets/double-bed.png'
@@ -12,13 +11,17 @@ import Laundry from '../../Assets/washing-machine.png'
 import drink from '../../Assets/welcome-drink.png'
 import Smoking from '../../Assets/smoking.png'
 import guide from '../../Assets/tour-guide.png'
+import Photographer from '../../Assets/photographer.png'
+import driver from '../../Assets/driver.png'
+import laundry from '../../Assets/laundry-machine.png'
+import cofee from '../../Assets/coffee-machine.png'
 
 
 const Services = () => {
   return (
     <div>
    <section className='top'>
-        <div className='top-image'>
+        <div className='services-top-image'>
             <div className='service-title text-white p-5  '>
                 <h1 className='fs-1 mt-4' >Services</h1>
                 <p>Home &gt;&gt; <span>Services</span> </p>
@@ -29,10 +32,11 @@ const Services = () => {
    </section>
 
    <section className='Services-style'>
-       <div className="image-boxes m-5 ">
+       <div className="image-boxes m-5  ">
 
           <div className="image-box ">
-             <img src={pool} alt="Room 1" />
+             <img src={pool}  alt="Room 1" />
+             
           </div>
 
           <div className="image-box ">
@@ -49,35 +53,35 @@ const Services = () => {
     <section className='services-style1'>
       <div className='theme-container  '>
         <div className='services-title '>
-        <h3 className='fs-1'>What we offer to our customers</h3>
-            <div className='line' ><hr className=''/></div>
-            </div>
-            <p className='second-p'>Some quick example text to build on the card title and make up the bulk of the card's content
+        <h3 className='fs-1 text-center '>What we offer to our customers</h3>
+            <div className='services-line' ><hr className=''/></div>
+            </div> 
+            <p className='services-second-p text-center mt-3 '>Some quick example text to build on the card title and make up the bulk of the card's content
             </p>
       </div>
 
 
-      <div className=' theme-container d-flex justify-content-around gap-4'>
+      <div className=' theme-container d-flex flex-wrap   justify-content-around gap-1'>
         
-            <div class="card">
-              <img src={car}alt="" />
-              <div class="card-body">
-              <h5 class="card-title">Car Rental</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
-              </p><br />
-              </div>
-          </div>
+      <div className="card col-sm-6 col-md-4 col-lg-3">
+        <img  src={car} alt="" className="mx-auto " />
+        <div className="card-body">
+          <h5 className="card-title">Car Rental</h5>
+          <p className="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
 
-          <div class="card">
-              <img src={pool1} alt="" />
-              <div class="card-body">
+
+          <div class="card col-sm-6 col-md-4 col-lg-3 ">
+              <img src={pool1} alt=""  className="mx-auto "/>
+              <div class="card-body ">
               <h5 class="card-title">Swimming Pool</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                </div>
           </div>
 
-          <div class="card">
-              <img src={wifi} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={wifi} alt=""  className="mx-auto " />
               <div class="card-body">
               <h5 class="card-title">Free Wifi</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -85,8 +89,8 @@ const Services = () => {
           </div>
 
 
-          <div class="card">
-              <img src={beds} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={beds} alt=""  className="mx-auto " />
               <div class="card-body">
               <h5 class="card-title">King Beds</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -95,26 +99,26 @@ const Services = () => {
 
           </div><br /><br />
 
-          <div className='theme-container d-flex   justify-content-around gap-4  '>
+          <div className='theme-container d-flex flex-wrap  justify-content-around gap-4  '>
 
-          <div class="card">
-              <img src={Laundry} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={Laundry} alt=""  className="mx-auto " />
               <div class="card-body">
               <h5 class="card-title">Laundry Service</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
           </div>
 
-          <div class="card">
-              <img src={Smoking} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={Smoking} alt="" className='mx-auto ' />
               <div class="card-body">
               <h5 class="card-title">Welcome Drinks</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
               </div>
           </div>
 
-          <div class="card">
-              <img src={drink} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={drink} alt="" className="mx-auto " />
               <div class="card-body">
               <h5 class="card-title">Smoking Free</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -122,8 +126,8 @@ const Services = () => {
           </div>
 
 
-          <div class="card">
-              <img src={guide} alt="" />
+          <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={guide} alt=""  className="mx-auto  " />
               <div class="card-body">
               <h5 class="card-title">Tour Guide</h5>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
@@ -136,14 +140,14 @@ const Services = () => {
 
       <section className='services-style1'>
         <div className='theme-container '>
-        <h3 className='fs-1  '>Additonal Features</h3>
-            <div className='line' ><hr className=''/></div>
+        <h3 className='fs-1 text-center   '>Additonal Features</h3>
+            <div className='services-line' ><hr className=''/></div>
         </div>
 
-        <div className='theme-container d-flex justify-content-around gap-4 mt-5'>
+        <div className='theme-container d-flex flex-wrap  justify-content-around gap-4 mt-5'>
 
-          <div class="card  ">
-              <img src={photography} alt=""  className='service-image'   />
+          <div class="card col-sm-6 col-md-4 col-lg-3  ">
+              <img src={Photographer} alt=""  className='service-image mx-auto mb-auto '   />
               <div class="card-body">
               <h5 class="card-title fs-3">Photographer</h5>
               <p class="card-text">Nemo enim ipsam voluptatm quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq uuntur magni dolores.
@@ -151,26 +155,28 @@ const Services = () => {
               </div>
           </div>
           
-        <div class="card1">
-              <img src="" alt="" className='service-image' />
-              <div class="card-body1">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={driver} alt="" className='service-image mx-auto mb-auto ' />
+              <div class="card-body">
+              <h5 class="card-title fs-3 ">Driver</h5>
+              <p class="card-text">Nemo enim ipsam voluptatm quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq uuntur magni dolores.
+              </p>
               </div>
           </div>
           
-        <div class="card2">
-              <img src="" alt="" />
+        <div class="card col-sm-6 col-md-4 col-lg-3">
+              <img src={laundry} alt="" className='service-image mx-auto' />
               <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <h5 class="card-title fs-3 ">Cloth Cleaning</h5>
+              <p class="card-text">Nemo enim ipsam voluptatm quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq uuntur magni dolores.
+              </p>
               </div>
           </div>
-        <div class="card">
-              <img src="" alt="" />
-              <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <div class="card col-sm-6 col-md-4 col-lg-3 ">
+              <img src={cofee} alt="" className='service-image mx-auto mb-auto' />
+              <div class="card-body  ">
+              <h5 class="card-title fs-3 ">Cofee Maker</h5>
+              <p class="card-text">Nemo enim ipsam voluptatm quia voluptas sit aspernatur aut odit aut fugit, sed quia conseq uuntur magni dolores.</p>
               </div>
           </div>  
         </div>

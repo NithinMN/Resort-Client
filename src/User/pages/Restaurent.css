@@ -1,27 +1,83 @@
-.top-image {
-    background-image: url('../../Assets/allpage.jpg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 100%;
-    height: 70vh;
+.Restaurent-top-img{
+background-image: url('../../Assets/allpage.jpg');
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 50vh;
+}
+.Restaurent-line{
+    display: inline-block;
+    vertical-align: middle;
+    width: 50px;
+    height: 5px;
+    background: #C19B76;
+}
+.restaurent-second-p {
+    color: #787878;
+    font-size: 15px;
+    line-height: 35px;
+    padding: 10px;
+    margin-top: 50px;
+    
   }
-  
-  .restaurent-title {
+
+
+.restaurent-booking {
+    height: 100vh;
+}
+
+.restaurent-title {
     font-size: 2.2rem;
     color: #444;
     margin-bottom: 10px;
-  }
-  
-  .restaurent-paragraph img {
+}
+
+.restaurent-paragraph img {
     max-width: 100%;
     height: auto;
-  }
-  
-  @media (min-width: 768px) {
-    .restaurent-paragraph img {
-      width: 445vh;
-      height: 500px;
+}
+
+.dishes-image img {
+    width: 280px;
+    height: 210px;
+}
+
+.restaurent-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+.restaurent-form-label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.restaurent-form-input,
+.restaurent-form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    background-color: black;
+}
+.restaurent-booking-paragraph {
+    background-image: url('../../Assets/candlelight.jpg');
+    background-position: center;
+}
+
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .restaurent-booking-paragraph {
+        background-size: auto; /* Adjust the background size for smaller screens */
     }
-  }
-  
+}
+
+/* Add more media queries if necessary */
+
+

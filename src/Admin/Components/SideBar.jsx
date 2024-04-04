@@ -1,41 +1,59 @@
 import React, { useState } from 'react';
 import './Sidebar.css';
-import { FaHotel, FaPowerOff } from 'react-icons/fa';
-import { Link, Outlet, Routes, Route } from 'react-router-dom'; // Import Routes and Route
+import { Link, Outlet, useNavigate } from 'react-router-dom'; 
+import { FaHotel, FaPowerOff, FaStream } from 'react-icons/fa';
 
 const SideBar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleSidebar = () => {
     setSidebarOpen(!sidebarOpen);
+    console.log(sidebarOpen);
+  };
+
+  // const closeSidebar = () => {
+  //   setSidebarOpen(false);
+  // };
+
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    localStorage.removeItem('userId');
+    navigate('/login');
   };
 
   return (
-    <div className='d-flex'>
-      <div className='w-25'>
-      <button onClick={toggleSidebar}>Toggle Sidebar</button>
+    <div>
+      <button  className='btn close-btn position-fixed z-2 text-white  px-1 py-0 d-block' 
+      style={{left: '20px'}}
+      onClick={toggleSidebar}>
+          <FaStream />
+        </button>
+    <div className={`sidebar position-fixed z-1   ${sidebarOpen ? 'd-block ' : 'd-none '}`} id='side-nav'>
+      <div className='header-box px-2 pt-3 pb-4 '>
+        <h1 className='fs-1 '>Resort</h1>
+         
+      
+        
+      </div>
+      {/* Other sidebar content */}
+      <ul className='list-unstyled px-2 '>
+        <li className=''><Link className='text-decoration-none px-3 py-2  d-block' to='/admin'><i className="fa-solid fa-house p-2 "></i>Bookingdetails</Link></li>
+        <li className=''><Link className='text-decoration-none px-3 py-2  d-block' to='/admin/RestaurentBookView'><i className="fa-solid fa-hotel p-2  "></i>Restaurent Booking</Link></li>
+       
+        {/* <li className=''><Link className='text-decoration-none px-3 py-2  d-block' to='/admin/CreateRoomType'><i className="fa-solid fa-house p-2 "></i>Createroomtype</Link></li> */}
+        
+      </ul>
+      <hr className='h-color mx-2 ' />
 
-      <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
-        <h2 className='text-white gap-2'>
-          <span><FaHotel/></span> Resort
-        </h2>
-        <ul>
-          <li><Link to='/admin'>BookingDetails</Link></li>
-          <li><Link to='/admin/CustomersView'>CustomersView</Link></li>
-          <li><Link to='/admin/ContactMessages'>ContactMessages</Link></li>
-          <li><Link to='/admin/'></Link></li>
-          <li><a href="#">customers</a></li>
-          <li><a href="#">Contact Reviews</a></li>
-          <li><a href="#">Available Rooms</a></li>
-          <li className='bg-gradient'><a href="#">Logout <span className='m-lg-2'><FaPowerOff/></span></a></li>
-        </ul>
-      </div>
-      </div>
-      <div className='w-75 '>
-      <Outlet/>
-      </div>
+      <ul className='list-unstyled px-2    '>
+        <li className='' onClick={handleLogout}><a href="/login" className='text-decoration-none px-3 py-2  d-block'><i class="fas fa-power-off p-2 "></i>Logout</a></li>
+      </ul>
     </div>
-  );
+    <div className=' d-flex justify-content-end align-content-lg-end '><Outlet /></div>
+    
+  </div>
+);
 };
 
 export default SideBar;
